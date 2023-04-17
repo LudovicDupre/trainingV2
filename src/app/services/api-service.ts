@@ -3,15 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Training } from '../models/training';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ApiServiceService {
+export class ApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { 
-  
-  }
-  
   getTrainings() {
-    return this.http.get<Training[]>("http://localhost:3000/trainings")
+    return this.http.get<Training[]>('http://localhost:3000/trainings');
   }
 }
