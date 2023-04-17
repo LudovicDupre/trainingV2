@@ -1,5 +1,12 @@
 <h1>
     coucou</h1>
-<ul>
-    <li *ngFor="let training of list_training">{{ training.name }}</li>
+<ul *ngFor="let training of list_training">
+    <li >{{training.id }}</li>
+    <li >{{training.price | number:'0.2' }}</li>
+    <button (click)="getTrainingById(training.id)">Click</button>
 </ul>
+
+<div *ngIf="training">
+  <h1>{{training | json}}</h1>
+
+</div>

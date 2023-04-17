@@ -11,4 +11,7 @@ export class ApiService {
   getTrainings() {
     return this.http.get<Training[]>('http://localhost:3000/trainings');
   }
+  getTrainingById(id:number){
+    return this.http.get<Training>('http://localhost:3000/trainings/' + id)
+  }
 }
