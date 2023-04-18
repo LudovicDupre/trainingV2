@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './component/cart/cart.component';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { MainPageComponent } from './component/main-page/main-page.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FooterComponent } from './component/footer/footer.component';
     TrainingsComponent,
     CartComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

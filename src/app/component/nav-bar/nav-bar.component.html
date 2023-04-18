@@ -1,11 +1,12 @@
 <!-- Main navigation container -->
-<nav
-  class="flex-no-wrap relative flex w-full items-center justify-between bg-white py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-2"
+<div class="sticky top-0">
+  <nav
+  class="flex-no-wrap  flex w-full items-center justify-between bg-[#bde0fe]  py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-2"
   data-te-navbar-ref>
   <div class="flex w-full flex-wrap items-center justify-between px-3">
     <!-- Hamburger button for mobile view -->
     <button
-      class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+      class="block border-0 bg-transparent px-2 text-white hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
       type="button"
       data-te-collapse-init
       data-te-target="#navbarSupportedContent1"
@@ -37,7 +38,7 @@
         class="mb-4 mr-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
         href="#">
         <img
-          src="../assets/logo-waveform-svgrepo-com.svg"
+          src="../assets/logo-waveform-svgrepo-com-white.svg"
           alt=""
           class="w-14"
           loading="lazy" />
@@ -49,7 +50,7 @@
         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
           <!-- Dashboard link -->
           <a
-            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+            class="text-[#172A3A] hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
             routerLink="/"
             data-te-nav-link-ref
             >Accueil</a
@@ -58,7 +59,7 @@
         <!-- Team link -->
         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
           <a
-            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+            class="text-[#172A3A] hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
             routerLink="/trainings"
             data-te-nav-link-ref
             >Nos Formations</a
@@ -67,7 +68,7 @@
         <!-- Projects link -->
         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
           <a
-            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+            class="text-[#172A3A] hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
             routerLink="/cart"
             data-te-nav-link-ref
             >Panier</a
@@ -86,7 +87,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            fill="currentColor"
+            fill="white"
             class="h-5 w-5">
             <path
               d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
@@ -150,3 +151,5 @@
     </div>
   </div>
 </nav>
+
+</div>
