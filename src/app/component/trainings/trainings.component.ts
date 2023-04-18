@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api-service';
+import { ApiService } from 'src/app/services/apiService/apiService';
 import { Training } from 'src/app/models/training';
+import { CartService } from 'src/app/services/cartService/cart.service';
 
 @Component({
   selector: 'app-trainings',
@@ -10,7 +11,7 @@ import { Training } from 'src/app/models/training';
 export class TrainingsComponent implements OnInit {
   list_training: Training[] = [];
   error!: string;
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private cartService: CartService) {}
 
   ngOnInit(): void {
     this.getTraining();
@@ -23,4 +24,8 @@ export class TrainingsComponent implements OnInit {
       complete: () => (this.error = ''),
     });
   }
+
+addToCart(training : Training) {
+  this.cartService.addTrainingToCart(training)
+}
 }
