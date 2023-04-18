@@ -1,1 +1,11 @@
-<p>cart works!</p>
+<h1>cart</h1>
+
+<tr *ngFor="let item of items" scope="row">
+    <td>{{ item.id }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.description }}</td>
+    <td>{{ item.price }}</td>
+    <td>{{ item.quantity }}</td>
+    <button (click)="removeAndReload(item)" >Supprimer</button>
+
+  </tr>

@@ -5,7 +5,10 @@ import { Training } from 'src/app/models/training';
   providedIn: 'root'
 })
 export class CartService {
-cartTraining : { [id: string]: Training } = {};
+  tick() {
+    throw new Error('Method not implemented.');
+  }
+  cartTraining: { [id: string]: Training } = {};
 
   constructor() {
     // On verifie si il existe un panier dans le local storage
@@ -13,14 +16,14 @@ cartTraining : { [id: string]: Training } = {};
     if (storedCart) {
       // Si il existe un cart dans le local storage, on récuperer les données et on l'envoi dans notre Map cartTraining
       const parsedCart = JSON.parse(storedCart);
-      const cartTraining = ({...parsedCart}); //
+      const cartTraining = ({ ...parsedCart }); //
       this.cartTraining = cartTraining;
-    } else{
+    } else {
       // Si il n'existe pas dans le local storage, on créer un map vide.
       this.cartTraining = {};
     }
   }
-// On ajoute au panier en vérifiant si l'article existe dans le panier
+  // On ajoute au panier en vérifiant si l'article existe dans le panier
   addTrainingToCart(training: Training) {
     const id = training.id;
     const existingItem = this.cartTraining[id];
@@ -36,18 +39,14 @@ cartTraining : { [id: string]: Training } = {};
     localStorage.setItem('cart', JSON.stringify(this.cartTraining));
   }
 
+  removeItem(training: Training) {
+    delete this.cartTraining[training.id];
+    localStorage.setItem('cart', JSON.stringify(this.cartTraining));
 
-  /* Best Fonction du Programme
-  getRetraiteà64ans(id:number) {
-    if(T PAS MORT){
-      tu bosse gros con
-    } else {
-      Bah T DCD
-    }
-
-    retraite += 2 ans
-
-  */
+  }
+  getItems() {
+    return Object.values(this.cartTraining);
+  }
 }
 
 

@@ -1,11 +1,9 @@
-<h1>
-    coucou</h1>
+
 <ul *ngFor="let training of list_training">
   <li>{{ training.id }}</li>
   <li>{{ training.name }}</li>
   <li>{{ training.description }}</li>
   <li>{{ training.price }}</li>
   <li><input type="number" min="0" placeholder="test" name="quantity" [(ngModel)]="training.quantity"></li>
-  <li>{{training.quantity}}</li>
   <button (click)="addToCart(training)" >Ajouter</button>
 </ul>
