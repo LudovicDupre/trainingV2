@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TrainingsComponent } from './component/trainings/trainings.component';
@@ -9,6 +9,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { MainPageComponent } from './component/main-page/main-page.component';
+import { FormCustomerComponent } from './component/form-customer/form-customer.component';
 
 
 @NgModule({
@@ -18,13 +19,15 @@ import { MainPageComponent } from './component/main-page/main-page.component';
     CartComponent,
     NavBarComponent,
     FooterComponent,
-    MainPageComponent
+    MainPageComponent,
+    FormCustomerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

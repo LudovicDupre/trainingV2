@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Customer } from 'src/app/models/customer';
 import { Training } from 'src/app/models/training';
 
 @Injectable({
@@ -46,6 +47,9 @@ export class CartService {
   }
   getItems() {
     return Object.values(this.cartTraining);
+  }
+  saveCustomer(customer : Customer) {
+    console.log(customer);
   }
 }
 
