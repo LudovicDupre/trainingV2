@@ -9,13 +9,18 @@ import { CartService } from 'src/app/services/cartService/cart.service';
 })
 export class CartComponent {
   items: Training[] = [];
+  total = 0;
 
   constructor(private cartService: CartService) {
     this.items = this.cartService.getItems()
   }
 
   ngOnInit(): void {
-
+    this.totalPrice(this.items);
+  }
+  totalPrice(training :Training[]){
+    for(let i of training)
+    this.total += (i.price * i.quantity)
   }
 
   removeItem(training: Training) {
@@ -25,6 +30,8 @@ export class CartComponent {
   removeAndReload(training: Training) {
     this.removeItem(training);
     this.items = this.cartService.getItems();
+    this.total -= training.price;
+
   }
 
 }
