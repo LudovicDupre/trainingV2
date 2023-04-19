@@ -30,7 +30,7 @@ export class CartComponent {
   removeAndReload(training: Training) {
     this.removeItem(training);
     this.items = this.cartService.getItems();
-    this.total -= training.price;
+    this.total -= training.price*training.quantity;
 
   }
 

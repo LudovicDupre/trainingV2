@@ -11,6 +11,7 @@ import { CartService } from 'src/app/services/cartService/cart.service';
 export class TrainingsComponent implements OnInit {
   list_training: Training[] = [];
   error!: string;
+  
   constructor(private apiService: ApiService, private cartService: CartService) {}
 
   ngOnInit(): void {
