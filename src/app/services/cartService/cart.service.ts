@@ -25,19 +25,20 @@ export class CartService {
     }
   }
   // On ajoute au panier en vérifiant si l'article existe dans le panier
-  addTrainingToCart(training: Training) {
-    const id = training.id;
-    const existingItem = this.cartTraining[id];
+  addTrainingToCart(training: Training, quantityToAdd:number) {
+  const id = training.id;
+  const existingItem = this.cartTraining[id];
 
-    if (existingItem) {
-      // L'article existe déjà dans le panier on ajoute alors la quantité et nom l'article
-      existingItem.quantity += training.quantity;
-    } else {
-      // Ajouter l'article au panier si il n'existait pas
-      this.cartTraining[id] = training;
-    }
-    // a chaque changement dans le panier, on envoi le tableau dans le local Storage
-    localStorage.setItem('cart', JSON.stringify(this.cartTraining));
+  if (existingItem && existingItem.quantity !== undefined) {
+    // L'article existe déjà dans le panier, on ajoute 1 à la quantité
+    existingItem.quantity += quantityToAdd;
+  } else {
+    // Ajouter l'article au panier si il n'existait pas
+    this.cartTraining[id] = { ...training, quantity: quantityToAdd };
+  }
+
+  // À chaque changement dans le panier, on envoie le tableau dans le localStorage
+  localStorage.setItem('cart', JSON.stringify(this.cartTraining));
   }
 
   removeItem(training: Training) {

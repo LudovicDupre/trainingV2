@@ -1,52 +1,68 @@
 {
   "trainings": [
-  {
-  "id": 3,
-  "name": "Python",
-  "description": "Formation Python/Django 10 jours",
-  "price": "1500",
-  "quantity": 1,
-  "img": "../../../assets/python.png"
-  },
-  {
-  "id": 4,
-  "name": "Php",
-  "description": "Initiation au Dev/Web avec hp 4 jours",
-  "price": 1300,
-  "quantity": 1,
-  "img": "../../../assets/php.png"
-  },
-  {
-  "id": 5,
-  "name": "NodeJs",
-  "description": "Prise en main de NodeJs/Express 2 jours",
-  "price": 1400,
-  "quantity": 1,
-  "img": "../../../assets/nodejs.png"
-  },
-  {
-  "id": 10,
-  "name": "PowerBi",
-  "description": "Business Intelligence 5 jours",
-  "price": 3000,
-  "quantity": 1,
-  "img": "../../../assets/powerbi.png"
-  },
-  {
-  "name": "Java",
-  "description": "Java Standard Edition 8 sur 5 jours",
-  "price": "3500",
-  "quantity": 1,
-  "id": 11,
-  "img": "../../../assets/java.jpg"
-  },
-  {
-  "id": 12,
-  "name": "DotNet",
-  "description": "DotNet & entityframework en 5 jours",
-  "price": "2750",
-  "quantity": 1,
-  "img": "../../../assets/asp.webp"
-  }
+    {
+      "id": 3,
+      "name": "Python",
+      "description": "Formation Python/Django 10 jours",
+      "price": "1500",
+      "quantity": 1,
+      "img": "../../../assets/python.png"
+    },
+    {
+      "id": 4,
+      "name": "Php",
+      "description": "Initiation au Dev/Web avec hp 4 jours",
+      "price": 1300,
+      "quantity": 1,
+      "img": "../../../assets/php.png"
+    },
+    {
+      "id": 5,
+      "name": "NodeJs",
+      "description": "Prise en main de NodeJs/Express 2 jours",
+      "price": 1400,
+      "quantity": 1,
+      "img": "../../../assets/nodejs.png"
+    },
+    {
+      "id": 10,
+      "name": "PowerBi",
+      "description": "Business Intelligence 5 jours",
+      "price": 3000,
+      "quantity": 1,
+      "img": "../../../assets/powerbi.png"
+    },
+    {
+      "name": "Java",
+      "description": "Java Standard Edition 8 sur 5 jours",
+      "price": "3500",
+      "quantity": 1,
+      "id": 11,
+      "img": "../../../assets/java.jpg"
+    },
+    {
+      "id": 12,
+      "name": "DotNet",
+      "description": "DotNet & entityframework en 5 jours",
+      "price": "2750",
+      "quantity": 1,
+      "img": "../../../assets/asp.webp"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "bob@example.com",
+      "password": "123456",
+      "pseudo": "bob",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "otto@example.com",
+      "password": "123456",
+      "pseudo": "otto",
+      "role": "user"
+    }
   ]
-  }
+}

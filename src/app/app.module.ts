@@ -11,6 +11,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { MainPageComponent } from './component/main-page/main-page.component';
 import { FormCustomerComponent } from './component/form-customer/form-customer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ConnexionComponent } from './component/connexion/connexion.component';
+
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MainPageComponent,
     FormCustomerComponent,
     NotFoundComponent
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
