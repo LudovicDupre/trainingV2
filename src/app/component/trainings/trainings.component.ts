@@ -11,7 +11,8 @@ import { CartService } from 'src/app/services/cartService/cart.service';
 export class TrainingsComponent implements OnInit {
   list_training: Training[] = [];
   error!: string;
-  
+
+
   constructor(private apiService: ApiService, private cartService: CartService) {}
 
   ngOnInit(): void {
@@ -27,6 +28,6 @@ export class TrainingsComponent implements OnInit {
   }
 
 addToCart(training : Training) {
-  this.cartService.addTrainingToCart(training)
+  this.cartService.addTrainingToCart(training,training.quantity)
 }
 }

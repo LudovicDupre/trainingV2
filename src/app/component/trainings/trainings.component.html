@@ -13,22 +13,17 @@
             class="h-14 w-14 rounded-lg object-contain"
           />
         </a>
-
         <div>
           <h3 class="font-medium sm:text-lg">
             <a href="#" class="hover:underline">
               {{ training.name }}
             </a>
           </h3>
-
           <p class="line-clamp-2 text-sm text-gray-700">
             {{ training.description }}
           </p>
-
           <div class="mt-2 sm:flex sm:items-center sm:gap-2">
             <div class="flex items-center gap-1 text-gray-500">
-
-
             <p class="text-sm">{{ training.price }} €</p>
             </div>
           </div>
@@ -40,7 +35,7 @@
 
       <div class="flex justify-end" >
         <div class="flex items-center justify-center">
-          <input class=" input input-bordered block m-1 mr-2 text-sm font-medium text-gray-900  dark:text-white w-24" type="number" min="0" placeholder="Quantité" name="quantity" [(ngModel)]="training.quantity">
+          <input class=" input input-bordered block m-1 mr-2 text-sm font-medium text-gray-900  dark:text-white w-24" type="number" min="0" placeholder="Quantité"  name="quantity" [(ngModel)]="training.quantity">
         </div>
         <strong
           class="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl bg-[#bde0fe] hover:bg-[#ffc8dd] px-3 py-1.5 text-white cursor-pointer"

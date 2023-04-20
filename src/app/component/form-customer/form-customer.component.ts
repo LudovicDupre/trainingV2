@@ -25,7 +25,7 @@ constructor(private formBuilder : FormBuilder, private cartService : CartService
 ngOnInit() {
 
   this.myForm = this.formBuilder.group({
-    name: [this.customer.name,[ Validators.required, Validators.minLength(10)]],
+    name: [this.customer.name,[ Validators.required, Validators.minLength(5)]],
     firstName: [this.customer.firstName, Validators.required],
     adress : [this.customer.adress, Validators.required],
     phone : [this.customer.phone, Validators.required],
