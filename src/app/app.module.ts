@@ -24,7 +24,7 @@ import { ConnexionComponent } from './component/connexion/connexion.component';
     FooterComponent,
     MainPageComponent,
     FormCustomerComponent,
-    NotFoundComponent
+    NotFoundComponent,
     ConnexionComponent
   ],
   imports: [
