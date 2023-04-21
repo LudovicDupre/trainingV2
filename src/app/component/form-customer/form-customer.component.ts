@@ -21,7 +21,7 @@ export class FormCustomerComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       name: [
         this.customer.name,
-        [Validators.required, Validators.minLength(5)],
+        [Validators.pattern('^([a-zA-Z]|[à-ú]|[À-Ú])+$'), Validators.required],
       ],
       firstName: [this.customer.firstName, Validators.required],
       adress: [this.customer.adress, Validators.required],
