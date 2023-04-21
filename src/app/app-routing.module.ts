@@ -18,8 +18,8 @@ const routes: Routes = [
   {path: 'cart', component : CartComponent},
   {path:'form-customer', component: FormCustomerComponent},
   {path:'connexion', component: ConnexionComponent},
-  { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo  : '/404'},
+  { path: '404', component: NotFoundComponent },
 
 
 ];
