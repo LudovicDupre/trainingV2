@@ -22,8 +22,16 @@ ngOnInit(): void {
 
 connexionUser(form: FormGroup){
   this.authService.getUser(this.connexionForm.value.email, this.connexionForm.value.password);
-  this.route.navigateByUrl('');
+  if(this.authService.isConnected){
+    this.route.navigateByUrl('/');
+  } else {
+    this.authService.errorMessage = true;
+  }
+
 }
 
+errMessage(){
+  return this.authService.errorMessage
+}
 
 }

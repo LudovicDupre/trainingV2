@@ -7,8 +7,9 @@
       <input formControlName="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" >
       <div  *ngIf="!name?.valid && (name?.dirty ||name?.touched)">
         <div [hidden]="!name?.errors">
-          isMarried is required
+         Name is invalid
         </div>
+
         </div>
     </div>
     <div class="w-full md:w-1/2 px-3">

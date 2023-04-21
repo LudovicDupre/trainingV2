@@ -8,6 +8,7 @@ import { ApiService } from '../apiService/apiService';
 export class AuthentificationService {
   userList : User[] = [];
   error = "";
+  errorMessage = false;
   isConnected = false;
   constructor(private authService : ApiService) { }
 
@@ -27,8 +28,8 @@ export class AuthentificationService {
     .subscribe({
       next: (data) =>{
         this.userList = data
+        if (this.userList.length > 0)
         this.isConnected = true;
-        console.log(this.isConnected);
         localStorage.setItem('User', JSON.stringify(this.userList))
       },
       error: (error) => (this.error = error.message),
@@ -41,6 +42,7 @@ export class AuthentificationService {
   this.isConnected=false
   localStorage.removeItem('User');
   this.userList = []
+  this.errorMessage = true
   }
 
 }

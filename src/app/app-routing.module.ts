@@ -16,10 +16,11 @@ const routes: Routes = [
   {path: 'trainings',component : TrainingsComponent},
   {path: 'cart', component : CartComponent},
   {path:'form-customer', component: FormCustomerComponent},
+  {path:'connexion', component: ConnexionComponent},
   {path:'', component: MainPageComponent},
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo  : '/404'},
-  {path:'connexion', component: ConnexionComponent},
+
   {path:'', component: MainPageComponent}
 
 ];
