@@ -12,6 +12,8 @@ import { MainPageComponent } from './component/main-page/main-page.component';
 import { FormCustomerComponent } from './component/form-customer/form-customer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ConnexionComponent } from './component/connexion/connexion.component';
+import { AdminComponent } from './component/admin/admin.component';
+import { AddTrainingComponent } from './component/add-training/add-training.component';
 
 
 
@@ -25,7 +27,9 @@ import { ConnexionComponent } from './component/connexion/connexion.component';
     MainPageComponent,
     FormCustomerComponent,
     NotFoundComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    AdminComponent,
+    AddTrainingComponent
   ],
   imports: [
     BrowserModule,
