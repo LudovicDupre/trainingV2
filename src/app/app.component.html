@@ -1,5 +1,10 @@
 <app-nav-bar></app-nav-bar>
+<li *ngIf="this.authService.isAdmin()" class="nav-item">
+    <a class="nav-link" href="#" routerLink="/adminTest">Administration</a>
+</li>
+<li *ngIf="" class="nav-item">
+    <a class="nav-link" href="#" routerLink="/admin-test">Administration</a>
+</li>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 
-  

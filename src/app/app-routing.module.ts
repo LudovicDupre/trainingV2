@@ -9,19 +9,22 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import { ConnexionComponent } from './component/connexion/connexion.component';
 import { AdminGuard } from './component/admin.guard';
-
-
+import { AdminTestComponent } from './admin-test/admin-test.component';
 
 const routes: Routes = [
+
   {path: 'trainings',component : TrainingsComponent},
   {path: 'cart', component : CartComponent},
   {path:'form-customer', component: FormCustomerComponent},
   {path:'connexion', component: ConnexionComponent},
   {path:'', component: MainPageComponent},
+  {path:'admin-test', component : AdminTestComponent, // création du component admin en cours
+  canActivate : [AdminGuard]
+  },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo  : '/404'},
 
-  {path:'', component: MainPageComponent}
+  {path:'', component: MainPageComponent},
 
 ];
 

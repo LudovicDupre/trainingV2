@@ -12,6 +12,7 @@ import { MainPageComponent } from './component/main-page/main-page.component';
 import { FormCustomerComponent } from './component/form-customer/form-customer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ConnexionComponent } from './component/connexion/connexion.component';
+import { AdminTestComponent } from './admin-test/admin-test.component';
 
 
 
@@ -25,7 +26,8 @@ import { ConnexionComponent } from './component/connexion/connexion.component';
     MainPageComponent,
     FormCustomerComponent,
     NotFoundComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    AdminTestComponent
   ],
   imports: [
     BrowserModule,
