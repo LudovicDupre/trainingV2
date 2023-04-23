@@ -5,11 +5,19 @@ import { CartComponent } from './component/cart/cart.component';
 import { MainPageComponent } from './component/main-page/main-page.component';
 import { FormCustomerComponent } from './component/form-customer/form-customer.component';
 
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ConnexionComponent } from './component/connexion/connexion.component';
+import { AdminGuard } from './component/admin.guard';
+import { AdminComponent } from './component/admin/admin.component';
+import { AddTrainingComponent } from './component/add-training/add-training.component';
+
+
 import { NotFoundComponent } from './component/not-found/not-found.component';
 
 import { ConnexionComponent } from './component/connexion/connexion.component';
 import { AdminGuard } from './component/admin.guard';
 import { AdminTestComponent } from './admin-test/admin-test.component';
+
 
 const routes: Routes = [
 
@@ -25,6 +33,13 @@ const routes: Routes = [
   {path:'form-customer', component: FormCustomerComponent},
   {path:'connexion', component: ConnexionComponent},
 
+  {path: 'add-training', component : AddTrainingComponent},
+  {path: 'admin', component : AdminComponent},
+  {path:'', component: MainPageComponent},
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo  : '/404'},
+
+
   {path:'', component: MainPageComponent},
 
   { path: '404', component: NotFoundComponent },
@@ -34,6 +49,7 @@ const routes: Routes = [
   { path: '404', component: NotFoundComponent },
 
   {path:'', component: MainPageComponent},
+
 
 
 ];
