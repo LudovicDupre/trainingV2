@@ -10,6 +10,7 @@ import { CartService } from 'src/app/services/cartService/cart.service';
 export class CartComponent {
   items: Training[] = [];
   total = 0;
+  isclicked = false
 
   constructor(private cartService: CartService) {
     this.items = this.cartService.getItems()
@@ -18,6 +19,8 @@ export class CartComponent {
   ngOnInit(): void {
     this.totalPrice(this.items);
   }
+
+
   totalPrice(training :Training[]){
     for(let i of training)
     this.total += (i.price * i.quantity)

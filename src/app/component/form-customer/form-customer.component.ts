@@ -34,7 +34,6 @@ ngOnInit() {
   })
 }
 onSaveCustomer(form: FormGroup)  {
-  console.log(form.errors)
   if(form.valid){
     this.cartService.saveCustomer(new Customer(form.value.name, form.value.firstName, form.value.adress, form.value.phone, form.value.email));
   }

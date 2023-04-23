@@ -1,47 +1,79 @@
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { ApiService } from '../apiService/apiService';
+import * as CryptoJS from 'crypto-js';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthentificationService {
-  userList : User[] = [];
+  userConnected! : User;
   error = "";
   errorMessage = false;
   isConnected = false;
-  constructor(private authService : ApiService) { }
+  constructor(private authService : ApiService) {
+// On verifie si il existe un panier dans le local storage
+const userInLS = localStorage.getItem('User');
+if (userInLS) {
+  // Si il existe un cart dans le local storage, on récuperer les données et on l'envoi dans notre Map cartTraining
+  const parsedUser = JSON.parse(userInLS);
+  this.userConnected = ({ ...parsedUser }); //
+
+  this.verifyUser(this.userConnected.email, this.userConnected.password)
+
+} else {
+  this.userConnected = new User(0,'','','','');
+}
+
+
+  }
 
   isAdmin() :any {
-    for(let user of this.userList){
-      if(user.role === 'admin') {
+
+      if(this.userConnected.role === 'admin') {
         return true;
       } else {
         return false;
       }
-    }
-
   }
 
-  getUser(email: string, password: string) { {
+  verifyUser(email: string, password: string) {
+    this.authService.getUserByEmailAndPassword(CryptoJS.AES.decrypt(email, 'les Jones').toString(CryptoJS.enc.Utf8), CryptoJS.AES.decrypt(password, 'les Jones').toString(CryptoJS.enc.Utf8))
+      .subscribe({
+        next: (user) => {
+          let dataUser = user[0]
+          if (CryptoJS.AES.decrypt(email, 'les Jones').toString(CryptoJS.enc.Utf8) === dataUser.email && CryptoJS.AES.decrypt(password, 'les Jones').toString(CryptoJS.enc.Utf8) === dataUser.password) {
+            this.isConnected = true;
+            console.log("c'est vrai")
+          } else {
+            this.isConnected = false;
+            console.log("c'est faux")
+          }
+        }
+      });
+  }
+
+  getUser(email: string, password: string) {
     this.authService.getUserByEmailAndPassword(email, password)
-    .subscribe({
-      next: (data) =>{
-        this.userList = data
-        if (this.userList.length > 0)
-        this.isConnected = true;
-        localStorage.setItem('User', JSON.stringify(this.userList))
-      },
-      error: (error) => (this.error = error.message),
-      complete: () => (this.error = ''),}
-    )
-  }
+      .subscribe({
+        next: (data) =>{
+          let dataUser = data[0];
+          this.userConnected = new User (dataUser.id,CryptoJS.AES.encrypt(dataUser.email, 'les Jones').toString(), CryptoJS.AES.encrypt(dataUser.password, 'les Jones').toString(), dataUser.role,dataUser.pseudo);
+          console.log(this.userConnected);
+          if (this.userConnected){
+            this.isConnected = true;
+            localStorage.setItem('User', JSON.stringify(this.userConnected));
+          }
+        },
+        error: (error) => (this.error = error.message),
+        complete: () => (this.error = ''),
+      });
   }
 
   disconnectUser() {
   this.isConnected=false
   localStorage.removeItem('User');
-  this.userList = []
+  this.userConnected = new User(0,'','','','');
   this.errorMessage = true
   }
 
