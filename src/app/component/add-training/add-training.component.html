@@ -1,0 +1,61 @@
+<div class="flex justify-center mt-20 mb-20">
+  <div class="flex w-3/6 justify-center">
+    <form class="w-full max-w-lg">
+      <div class="flex flex-wrap -mx-3 mb-6 form-group">
+       
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-first-name"
+          >
+            Nom de la formation
+          </label>
+          <input
+            formControlName="trainigName"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            id="grid-first-name"
+            type="text"
+          />
+       
+      </div>
+
+      <div class="flex flex-wrap -mx-3 mb-6">
+        
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-password"
+          >
+            Description
+          </label>
+          <input
+            formControlName="Description"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-password"
+            type="email"
+          />
+     
+      </div>
+
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-city"
+        >
+          Prix
+        </label>
+        <input
+          formControlName="Prix"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-city"
+          type="text"
+        />
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="image_formation">
+          Image de la formation
+        </label>
+        <input type="file" accept="assets/*" formControlName="image" id="image_formation" />
+      </div>
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+</div>

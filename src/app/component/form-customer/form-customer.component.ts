@@ -9,6 +9,7 @@ import { CartService } from 'src/app/services/cartService/cart.service';
   styleUrls: ['./form-customer.component.css'],
 })
 export class FormCustomerComponent implements OnInit {
+
   myForm!: FormGroup;
 
   customer: Customer = new Customer('', '', '', '', '');
@@ -42,6 +43,8 @@ export class FormCustomerComponent implements OnInit {
         )
       );
     }
+
+
   }
 
   get phone() {

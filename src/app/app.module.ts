@@ -10,6 +10,15 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { MainPageComponent } from './component/main-page/main-page.component';
 import { FormCustomerComponent } from './component/form-customer/form-customer.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
+import { ConnexionComponent } from './component/connexion/connexion.component';
+
+import { AdminComponent } from './component/admin/admin.component';
+import { AddTrainingComponent } from './component/add-training/add-training.component';
+
+import { AdminTestComponent } from './admin-test/admin-test.component';
+
+
 
 
 @NgModule({
@@ -20,7 +29,15 @@ import { FormCustomerComponent } from './component/form-customer/form-customer.c
     NavBarComponent,
     FooterComponent,
     MainPageComponent,
-    FormCustomerComponent
+    FormCustomerComponent,
+    NotFoundComponent,
+    ConnexionComponent,
+
+    AdminComponent,
+    AddTrainingComponent
+
+    AdminTestComponent
+
   ],
   imports: [
     BrowserModule,
