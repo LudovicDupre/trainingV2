@@ -34,7 +34,7 @@ import { AdminTestComponent } from './admin-test/admin-test.component';
     ConnexionComponent,
 
     AdminComponent,
-    AddTrainingComponent
+    AddTrainingComponent,
 
     AdminTestComponent
 
