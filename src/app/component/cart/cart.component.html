@@ -84,14 +84,14 @@
               </div>
             </dl>
 
-            <div class="flex justify-end">
-              <a
-              (click)="isclicked=true"
-                class="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
+
+              <div class="flex justify-end">
+              <a  (click)="validateCart()"class="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
               >
                 Valider
               </a>
             </div>
+
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@
       </div>
     </div>
 
-    <div *ngIf="isclicked">
+    <div *ngIf="this.isClicked === true">
       <app-form-customer/>
     </div>
   </div>

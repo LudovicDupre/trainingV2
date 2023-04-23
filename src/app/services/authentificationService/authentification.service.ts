@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { ApiService } from '../apiService/apiService';
 import * as CryptoJS from 'crypto-js';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthentificationService {
   error = "";
   errorMessage = false;
   isConnected = false;
-  constructor(private authService : ApiService) {
+  constructor(private authService : ApiService, private route : Router) {
 // On verifie si il existe un panier dans le local storage
 const userInLS = localStorage.getItem('User');
 if (userInLS) {
@@ -21,9 +22,9 @@ if (userInLS) {
 
   this.verifyUser(this.userConnected.email, this.userConnected.password)
 
-} else {
-  this.userConnected = new User(0,'','','','');
-}
+  } else {
+    this.userConnected = new User(0,'','','','');
+  }
 
 
   }
@@ -62,6 +63,7 @@ if (userInLS) {
           console.log(this.userConnected);
           if (this.userConnected){
             this.isConnected = true;
+            this.route.navigate(['/'])
             localStorage.setItem('User', JSON.stringify(this.userConnected));
           }
         },
@@ -69,6 +71,11 @@ if (userInLS) {
         complete: () => (this.error = ''),
       });
   }
+    get booleanUser(){
+      return new Promise<boolean>((resolve, reject) => {
+        resolve(this.isConnected);
+      })
+    }
 
   disconnectUser() {
   this.isConnected=false
