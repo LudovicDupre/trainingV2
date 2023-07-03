@@ -25,7 +25,7 @@ export class ApiService {
 
   public getTraining(id : number) {
     return this.http.get<Training>(environment.host+"/trainings/"+id);
- }
+  }
 
   getUserByEmailAndPassword(email: string, password: string) {
   return  this.http.get<User[]>(`http://localhost:3000/users?email=${email}&password=${password}`);

@@ -17,6 +17,7 @@ import { AdminComponent } from './component/admin/admin.component';
 import { AddTrainingComponent } from './component/add-training/add-training.component';
 
 import { AdminTestComponent } from './admin-test/admin-test.component';
+import { EditTrainingComponent } from './component/edit-training/edit-training.component';
 
 
 
@@ -36,7 +37,8 @@ import { AdminTestComponent } from './admin-test/admin-test.component';
     AdminComponent,
     AddTrainingComponent,
 
-    AdminTestComponent
+    AdminTestComponent,
+      EditTrainingComponent
 
   ],
   imports: [

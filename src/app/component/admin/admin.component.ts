@@ -26,4 +26,12 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  delTraining(training: Training) {
+  this.apiService.delTraining(training).subscribe({
+    next: ()=> (this.list_training= this.list_training?.filter(Training => Training.id !== training.id)),
+    error: (err) => (console.error('Erreur lors de la suppression : ', err)),
+    complete: ()=> (this.error = 'null')
+  })
+  
+  }
 }

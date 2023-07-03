@@ -2,14 +2,14 @@
     <div class="flex w-3/6 justify-center" >
       <article class="rounded-xl border-2 border-gray-100 bg-white w-full ">
         <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
-          <a href="#" class="block shrink-0">
+         <!-- <a href="#" class="block shrink-0">
             <img
               alt="Speaker"
               src=" {{ training.img }}"
   
               class="h-14 w-14 rounded-lg object-contain"
             />
-          </a>
+          </a>-->
           <div>
             <h3 class="font-medium sm:text-lg">
               <a href="#" class="hover:underline">
@@ -51,8 +51,32 @@
               />
             </svg>
             <span class="text-[10px] font-medium sm:text-xs ">
-              <button  class="text-[#c53535]"  >Supprimer formation</button></span>
+              <button  class="text-[#c53535]" (click)="delTraining(training)" >Supprimer formation</button></span>
         </strong>
+        <div class="flex justify-end" >
+          
+          <strong
+            class="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl bg-[#bde0fe] hover:bg-[#ffc8dd] px-3 py-1.5 text-white cursor-pointer"
+     
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#172A3A"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              />
+            </svg>
+            <span class="text-[10px] font-medium sm:text-xs ">
+              <button  class="text-[#c53535]"  >Mise à jour</button></span>
+        </strong>
+        </div>
         </div>
       </article>
     </div>
