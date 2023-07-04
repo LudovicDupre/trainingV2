@@ -10,6 +10,7 @@ import { ConnexionComponent } from './component/connexion/connexion.component';
 import { AdminGuard } from './component/admin.guard';
 import { AdminComponent } from './component/admin/admin.component';
 import { AddTrainingComponent } from './component/add-training/add-training.component';
+import { EditTrainingComponent } from './component/edit-training/edit-training.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'add-training', component : AddTrainingComponent},
   {path: 'admin', component : AdminComponent},
   {path: '404', component: NotFoundComponent},
+  {path: 'edit-training', component : EditTrainingComponent},
   {path: '**', redirectTo  : '/404'}
 ];
 

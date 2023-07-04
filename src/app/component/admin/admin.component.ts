@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Training } from 'src/app/models/training';
 import { ApiService } from 'src/app/services/apiService/apiService';
 import { CartService } from 'src/app/services/cartService/cart.service';
@@ -12,7 +13,7 @@ export class AdminComponent implements OnInit {
   list_training: Training[] = [];
   error!: string;
 
-  constructor(private apiService: ApiService, private cartService: CartService) { }
+  constructor(private apiService: ApiService, private cartService: CartService, private route: Router) { }
 
 
   ngOnInit(): void {
@@ -24,6 +25,10 @@ export class AdminComponent implements OnInit {
       error: (error) => (this.error = error.message),
       complete: () => (this.error = ''),
     });
+  }
+
+  onUpdateTraining(training: Training) {
+    this.route.navigate(['/edit-training'], {state: {training}});
   }
 
   delTraining(training: Training) {

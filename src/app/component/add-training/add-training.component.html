@@ -10,9 +10,9 @@
             Nom de la formation
           </label>
           <input
-            formControlName="trainigName"
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-first-name"
+            [(ngModel)]="training.name" required
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white form-control"
+            name="name"
             type="text"
           />
        
@@ -27,10 +27,10 @@
             Description
           </label>
           <input
-            formControlName="Description"
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-password"
-            type="email"
+            [(ngModel)]="training.description" required
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control"
+            name="description"
+            type="text"
           />
      
       </div>
@@ -43,19 +43,19 @@
           Prix
         </label>
         <input
-          formControlName="Prix"
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          id="grid-city"
-          type="text"
+          [(ngModel)]="training.price" required
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500  form-control"
+          name="price"
+          type="number"
         />
       </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
+      <!--<div class="flex flex-wrap -mx-3 mb-6">
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="image_formation">
           Image de la formation
         </label>
         <input type="file" accept="assets/*" formControlName="image" id="image_formation" />
-      </div>
-      <button type="submit">Ajouter</button>
+      </div>--> 
+      <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
   </div>
 </div>

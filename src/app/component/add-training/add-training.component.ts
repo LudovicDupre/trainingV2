@@ -9,15 +9,15 @@ import { ApiService } from 'src/app/services/apiService/apiService';
   styleUrls: ['./add-training.component.css']
 })
 export class AddTrainingComponent {
-  error: null | undefined;
 
+  error: null | undefined;
   constructor(private apiService: ApiService, private route : Router) {}
 
   training : Training = new Training(0,"","",0,1,"")
 
   onAddTraining() {
     this.apiService.postTraining(this.training).subscribe({
-      next: () => (this.route.navigate(['/trainings'])),
+      next: () => (this.route.navigate(['/admin'])),
       error:(err) => (console.error("Erreur à l'ajout : ", err)),
       complete: () => (this.error = null)
     });
