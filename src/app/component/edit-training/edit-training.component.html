@@ -1,25 +1,63 @@
-<div class="container ">
+<div class="flex w-3/6 justify-center ">
     <ng-container>
         <div class="text-center pb-3">
             <h1>Modifier la formation</h1>
         </div>
-        <form  #trainingForm="ngForm" (ngSubmit)="onEditTraining()">
-            <div class="form-group py-2" style="display:none;">
-                <label for="id">ID de la formation :</label>
-                <input type="text" class="form-control" name="id" required  [(ngModel)]="training.id" >
+        <form class="w-full max-w-lg" #trainingForm="ngForm" (ngSubmit)="onEditTraining()">
+            <div class="flex flex-wrap -mx-3 mb-6 form-group">
+       
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-first-name"
+                >
+                  Nom de la formation
+                </label>
+                <input
+                  [(ngModel)]="training.name" required
+                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white form-control"
+                  name="name"
+                  type="text"
+                />
+             
             </div>
-            <div class="form-group py-2">
-                <label for="name">Modifier le nom de la formation :</label>
-                <input type="text" class="form-control" name="name" required [(ngModel)]="training.name">
+      
+            <div class="flex flex-wrap -mx-3 mb-6">
+              
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-password"
+                >
+                  Description
+                </label>
+                <input
+                  [(ngModel)]="training.description" required
+                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control"
+                  name="description"
+                  type="text"
+                />
+           
             </div>
-            <div class="form-group py-2">
-                <label for="description">Donner une courte description de la formation :</label>
-                <input type="text" class="form-control" name="description" required [(ngModel)]="training.description">
+      
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <label
+                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                for="grid-city"
+              >
+                Prix
+              </label>
+              <input
+                [(ngModel)]="training.price" required
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500  form-control"
+                name="price"
+                type="number"
+              />
             </div>
-            <div class="form-group py-2">
-                <label for="price">Modifier le prix de la formation</label>
-                <input type="number" class="form-control" name="price" required [(ngModel)]="training.price">
-            </div>
+            <!--<div class="flex flex-wrap -mx-3 mb-6">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="image_formation">
+                Image de la formation
+              </label>
+              <input type="file" accept="assets/*" formControlName="image" id="image_formation" />
+            </div>--> 
             <button type="submit" class="btn btn-primary">Enregistrer</button>	
         </form>
     </ng-container>

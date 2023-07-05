@@ -4,7 +4,7 @@ export class Training {
   description: string;
   price: number;
   quantity: number;
-  img: string;
+  image: string;
 
   constructor(
     id: number,
@@ -12,13 +12,13 @@ export class Training {
     description: string,
     price: number,
     quantity: number,
-    img: string
+    image: string
   ) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.price = price;
     this.quantity = quantity;
-    this.img = img;
+    this.image = image;
   }
 }
